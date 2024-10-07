@@ -1,0 +1,58 @@
+// ------ FlexBox -----
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin gradient-background {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,0.2819328414959734) 100%);
+}
+
+@mixin translucent-background {
+    background: rgba(0,0,0,0.9);
+}
+
+@mixin frostet-glass {
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  // To ensure the content inside this div is not blurred by the backdrop-filter
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none; // Makes sure the pseudo-element doesn't block clicks
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+@mixin js-background {
+  background: rgb(247,223,30);
+  background: linear-gradient(90deg, rgba(247,223,30,1) 0%, rgba(247,223,30,1) 20%, rgba(247,223,30,0.1993391106442577) 100%);
+}
+
+@mixin ts-background {
+  background: rgb(0,122,204);
+  background: linear-gradient(90deg, rgba(0,122,204,1) 0%, rgba(0,122,204,1) 20%, rgba(0,122,204,0.1993391106442577) 100%);
+}
+
+@mixin csharp-background {
+  background: rgb(40,0,104);
+  background: linear-gradient(90deg, rgba(40,0,104,1) 0%, rgba(40,0,104,1) 20%, rgba(40,0,104,0.2) 100%);
+}
+
+@mixin python-background {
+  background: rgb(71, 146, 208);
+  background: linear-gradient(90deg, rgba(71, 146, 208,1) 0%, rgba(71, 146, 208,1) 20%, rgba(71, 146, 208,0.2) 100%);
+}
